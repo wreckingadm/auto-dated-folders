@@ -1,3 +1,7 @@
+# Project files
+.DS_Store
+*.sublime-workspace
+
 # Compiled Lua sources
 luac.out
 
