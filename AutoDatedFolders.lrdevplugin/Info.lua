@@ -7,4 +7,11 @@ return {
   LrToolkitIdentifier = "com.boxdev.auto-dated-folders",
   LrPluginName = "Auto Dated Folders",
   LrPluginInfoUrl="https://wreckreation.org",
+
+  LrLibraryMenuItems = {
+    {
+      title = "Move selected photos...",
+      file = "run.lua",
+    },
+  },
 }
