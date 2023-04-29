@@ -15,7 +15,7 @@ if [ -d "$dir" ]; then
 
       # Confirm we're working with an image
       file_type=$(file -I "$file")
-      if [[ "$file_type" = *": image/"* ]]; then
+      if [[ "$file_type" = *": image/"* ]] || [[ "$file_type" = *": video/"* ]]; then
         # Get the parent directory name
         parent_dir=$(dirname "$file" | xargs basename)
 
