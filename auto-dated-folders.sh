@@ -31,14 +31,19 @@ if [ -d "$dir" ]; then
           # Create dated directory if it does not already exist
           if [ ! -d "$dir/$capture_date" ]; then
             #TODO: Make sure this puts it in the right path
-            echo "Creating directory $dir/$capture_date..."
+            echo "  +Creating directory $dir/$capture_date..."
             mkdir "$dir/$capture_date"
           fi
 
-          # Move to dated directory
-          echo "Moving $file into $dir/$capture_date..." #DEBUG
-          #mv "$file" "$dir/$capture_date"
-          ((iter++))
+          # Make sure that our destination file doesn't already exist
+          if [ -f "$dir/$capture_date/$file" ]; then
+            echo "  !Destination $dir/$capture_date/$file already exists"
+          else
+            # Move to dated directory
+            echo "  >Moving $file into $dir/$capture_date..." #DEBUG
+            mv "$file" "$dir/$capture_date"
+            ((iter++))
+          fi
 
         # else
         #   echo "No photos found that match the year of their parent directory"
